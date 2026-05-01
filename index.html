@@ -3,39 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lobinho Presets</title>
+    <title>Lobinho Presets | Premium Lightroom Assets</title>
+    <!-- Importamos fuente elegante de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #fafafa; margin: 0; }
-        .header { background: white; border-bottom: 1px solid #dbdbdb; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
-        .container { max-width: 935px; margin: 30px auto; padding: 0 20px; }
-        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-        .preset-card { background: white; border: 1px solid #dbdbdb; position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
-        .preset-card img { width: 100%; height: 100%; object-fit: cover; }
-        .info-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; background: rgba(0,0,0,0.4); opacity: 0; transition: opacity 0.3s; }
-        .preset-card:hover .info-overlay { opacity: 1; }
-        .download-btn { background: #0095f6; color: white; border: none; padding: 8px 12px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 13px; }
-        @media (max-width: 600px) { .gallery { gap: 3px; } .container { padding: 0; } }
+        /* Estilos Globales inspirados en Modo Oscuro */
+        :root {
+            --bg-color: #121212; /* Fondo oscuro de image_7.png */
+            --card-bg: #1e1e1e;   /* Gris oscuro para tarjetas */
+            --text-color: #e0e0e0;
+            --accent-color: #ffeb3b; /* Amarillo/Dorado brillante de image_7.png */
+            --hover-color: #2a2a2a;
+        }
+
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            margin: 0; 
+            font-weight: 300;
+        }
+
+        h1, h2, h3 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: white;
+        }
+
+        /* Cabecera Estilo Minimalista de image_8.png */
+        .header { 
+            padding: 60px 20px; 
+            text-align: center; 
+            border-bottom: 1px solid #333;
+        }
+        
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { 
+            font-size: 1rem; 
+            color: #aaa; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            line-height: 1.6;
+        }
+
+        /* Contenedor principal */
+        .container { 
+            max-width: 1200px; 
+            margin: 50px auto; 
+            padding: 0 30px; 
+        }
+
+        /* Galería Rejilla de image_7.png pero más estilizada */
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 40px; 
+        }
+
+        /* Tarjeta de Preset con efecto de elevación de image_8.png */
+        .preset-card { 
+            background: var(--card-bg); 
+            border-radius: 8px; 
+            overflow: hidden; 
+            transition: all 0.3s ease; 
+            border: 1px solid #222;
+        }
+
+        .preset-card:hover { 
+            transform: translateY(-5px); 
+            border-color: #444; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
+
+        .preset-card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease;
+        }
+
+        .preset-card:hover img { 
+            transform: scale(1.05);
+        }
+
+        /* Detalles de la tarjeta (Títulos y Botones) estilo image_9.png */
+        .card-details {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-details h3 {
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: white;
+            text-transform: none; /* Mantener nombre normal */
+            letter-spacing: 0;
+        }
+
+        /* Botón Contorneado Minimalista */
+        .download-btn { 
+            display: inline-block;
+            background: transparent; 
+            color: var(--accent-color); 
+            border: 2px solid var(--accent-color); 
+            padding: 10px 25px; 
+            border-radius: 4px; 
+            text-decoration: none; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600; 
+            font-size: 12px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        /* Efecto Relleno en Hover estilo image_7.png */
+        .download-btn:hover { 
+            background: var(--accent-color); 
+            color: var(--bg-color); 
+            box-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
+        }
+
+        /* Adaptación Móvil */
+        @media (max-width: 768px) { 
+            .gallery { gap: 20px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); } 
+            .header h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>📸 Presets Lobinho</h1>
-        <p>Ajustes profesionales para Lightroom</p>
+        <h1>📸 LOBINHO PRESETS</h1>
+        <p>Colección exclusiva de ajustes profesionales para Lightroom. Transforma tus fotografías con estilo y personalidad premium.</p>
     </div>
+    
     <div class="container">
         <div class="gallery">
+            
+            <!-- TARJETA 1 -->
             <div class="preset-card">
-                <img src="1212.jpg">
-                <div class="info-overlay">
-                    <a href="1212.jpg" download class="download-btn">Descargar</a>
+                <div class="card-image-container">
+                    <img src="1212.jpg" alt="Preset Aviación Premium">
+                </div>
+                <div class="card-details">
+                    <h3>Ajuste Aviación</h3>
+                    <!-- Aquí luego pondremos el enlace al archivo .dng -->
+                    <a href="1212.jpg" download class="download-btn">Descargar Preset</a>
                 </div>
             </div>
+
+            <!-- TARJETA 2 -->
             <div class="preset-card">
-                <img src="1313.jpg">
-                <div class="info-overlay">
-                    <a href="1313.jpg" download class="download-btn">Descargar</a>
+                <div class="card-image-container">
+                    <img src="1313.jpg" alt="Preset Urbano Look">
+                </div>
+                <div class="card-details">
+                    <h3>Estilo Urbano</h3>
+                    <a href="1313.jpg" download class="download-btn">Descargar Preset</a>
                 </div>
             </div>
+
         </div>
     </div>
 </body>
