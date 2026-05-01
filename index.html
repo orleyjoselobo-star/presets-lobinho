@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobinho Presets</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #fafafa; margin: 0; }
+        .header { background: white; border-bottom: 1px solid #dbdbdb; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        .container { max-width: 935px; margin: 30px auto; padding: 0 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .preset-card { background: white; border: 1px solid #dbdbdb; position: relative; aspect-ratio: 1 / 1; overflow: hidden; cursor: pointer; }
+        .preset-card img { width: 100%; height: 100%; object-fit: cover; transition: filter 0.3s; }
+        .preset-card:hover img { filter: brightness(0.7); }
+        .info-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; opacity: 0; transition: opacity 0.3s; padding: 10px; text-align: center; }
+        .preset-card:hover .info-overlay { opacity: 1; }
+        .download-btn { background: #0095f6; color: white; border: none; padding: 5px 10px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 12px; margin-top: 5px; }
+        @media (max-width: 600px) { .gallery { gap: 3px; } .container { padding: 0; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📸 Presets Lobinho</h1>
+        <p>Ajustes profesionales para Lightroom</p>
+    </div>
+    <div class="container">
+        <div class="gallery">
+            
+            <div class="preset-card">
+                <img src="81706744-estacionamiento-avion-de-helice-en-el-aeropuerto.jpg" alt="Preset Avion">
+                <div class="info-overlay">
+                    <strong>Avión de Hélice</strong>
+                    <a href="81706744-estacionamiento-avion-de-helice-en-el-aeropuerto.jpg" download class="download-btn">Descargar Preset</a>
+                </div>
+            </div>
+
+            <div class="preset-card">
+                <img src="Imagen de WhatsApp 2025-10-12 a las 20.25.2.jpg" alt="Preset WhatsApp">
+                <div class="info-overlay">
+                    <strong>Estilo Urbano</strong>
+                    <a href="Imagen de WhatsApp 2025-10-12 a las 20.25.2.jpg" download class="download-btn">Descargar Preset</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
